@@ -4,6 +4,7 @@ menu
 
 - id
 - meals
+- date
 
 meal
 
