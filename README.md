@@ -10,7 +10,7 @@ meal
 
 - id
 - name
-- foods
+- dishes
 
 food
 
