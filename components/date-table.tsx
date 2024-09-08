@@ -23,7 +23,6 @@ export default function DateTable({ dates }: { dates: any }) {
 
   return (
     <Table>
-      <TableCaption>A list of your recent invoices.</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead className="w-[100px]">日付</TableHead>
@@ -40,7 +39,7 @@ export default function DateTable({ dates }: { dates: any }) {
             }`}
             onClick={() => handleRowClick(date)}
           >
-            <TableCell className="font-medium">
+            <TableCell className="font-medium whitespace-nowrap">
               {format(date, "MM/dd (EEE)", { locale: ja })}
             </TableCell>
             <TableCell>
