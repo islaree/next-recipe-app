@@ -1,30 +1,30 @@
 import { create } from "zustand";
 
-import { Dish } from "@/types/dish";
-import { Meal } from "@/types/meal";
-import { Menu } from "@/types/menu";
+import { DishType } from "@/types/dish";
+import { MealType } from "@/types/meal";
+import { MenuType } from "@/types/menu";
 
 type MenuState = {
-  menus: Menu[];
-  addMenu: (menu: Menu) => void;
-  getMenu: (id: string) => Menu | undefined;
-  getAllMenu: () => Menu[];
-  updateMenu: (menu: Menu) => void;
+  menus: MenuType[];
+  addMenu: (menu: MenuType) => void;
+  getMenu: (id: string) => MenuType | undefined;
+  getAllMenu: () => MenuType[];
+  updateMenu: (menu: MenuType) => void;
 };
 
 type MealState = {
-  meals: Meal[];
-  addMeal: (meal: Meal) => void;
-  getMeals: (id: string) => Meal[] | undefined;
+  meals: MealType[];
+  addMeal: (meal: MealType) => void;
+  getMeals: (id: string) => MealType[] | undefined;
   deleteMeals: (id: string) => void;
 };
 
 type DishState = {
-  dishes: Dish[];
-  add: (dish: Dish) => void;
-  get: (id: string) => Dish[] | undefined;
+  dishes: DishType[];
+  add: (dish: DishType) => void;
+  get: (id: string) => DishType[] | undefined;
   delete: (id: string) => void;
-  getAll: () => Dish[] | undefined;
+  getAll: () => DishType[] | undefined;
 };
 
 export const useMenuStore = create<MenuState>((set, get) => ({
@@ -33,7 +33,7 @@ export const useMenuStore = create<MenuState>((set, get) => ({
     const state = get();
     return state.menus;
   },
-  addMenu: (menu: Menu) =>
+  addMenu: (menu: MenuType) =>
     set((state) => ({
       menus: [menu, ...state.menus],
     })),
@@ -41,7 +41,7 @@ export const useMenuStore = create<MenuState>((set, get) => ({
     const state = get();
     return state.menus.find((m) => m.id === id);
   },
-  updateMenu: (menu: Menu) =>
+  updateMenu: (menu: MenuType) =>
     set((state) => ({
       menus: state.menus.map((m) => (m.id === menu.id ? menu : m)),
     })),
