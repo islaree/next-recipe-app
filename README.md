@@ -12,9 +12,8 @@ meal
 - name
 - dishes
 
-food
+dish
 
 - id
 - name
 - ingredients
-- note
