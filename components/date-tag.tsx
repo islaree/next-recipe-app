@@ -9,30 +9,21 @@ export default function DateTag({ id }: { id: string }) {
 
   return (
     <div className="flex space-x-1">
-      {breakfast?.map((m) => (
-        <span
-          key={m.id}
-          className="py-1 px-2 rounded-md bg-sky-50 border border-sky-200 font-medium text-xs text-sky-600 whitespace-nowrap"
-        >
-          {m.name}
+      {breakfast.length > 0 && (
+        <span className="py-1 px-2 rounded-md bg-sky-50 border border-sky-200 font-medium text-xs text-sky-600 whitespace-nowrap">
+          朝食
         </span>
-      ))}
-      {lunch?.map((m) => (
-        <span
-          key={m.id}
-          className="py-1 px-2 rounded-md bg-emerald-50 border border-emerald-200 font-medium text-xs text-emerald-600 whitespace-nowrap"
-        >
-          {m.name}
+      )}
+      {lunch.length > 0 && (
+        <span className="py-1 px-2 rounded-md bg-sky-50 border border-sky-200 font-medium text-xs text-sky-600 whitespace-nowrap">
+          昼食
         </span>
-      ))}
-      {dinner?.map((m) => (
-        <span
-          key={m.id}
-          className="py-1 px-2 rounded-md bg-red-50 border border-red-200 font-medium text-xs text-red-600 whitespace-nowrap"
-        >
-          {m.name}
+      )}
+      {dinner.length > 0 && (
+        <span className="py-1 px-2 rounded-md bg-sky-50 border border-sky-200 font-medium text-xs text-sky-600 whitespace-nowrap">
+          夕食
         </span>
-      ))}
+      )}
     </div>
   );
 }
