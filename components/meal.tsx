@@ -1,20 +1,20 @@
 "use client";
 
-import { Button } from "./ui/button";
-import { Trash2 } from "lucide-react";
-import { MealType } from "@/types/meal";
 import Dishes from "./dishes";
 import AddDish from "./add-dish";
-import { useEffect } from "react";
 
 export default function Meal({ title }: { title: string }) {
   return (
-    <>
-      <div className="flex items-center justify-between">{title}</div>
-      <div>
-        <Dishes title={title} />
-        <AddDish mealname={title} />
+    <div>
+      <div className="border-t border-b border-gray-200 bg-gray-100 text-sm p-2">
+        {title == "breakfast"
+          ? "朝食"
+          : title == "lunch"
+          ? "昼食"
+          : title == "dinner" && "夕食"}
       </div>
-    </>
+      <Dishes title={title} />
+      <AddDish mealname={title} />
+    </div>
   );
 }
