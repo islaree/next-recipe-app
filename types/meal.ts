@@ -1,10 +1,10 @@
-import { Dishes } from "./dish";
+import { DishesType } from "./dish";
 
-export type Meal = {
+export type MealType = {
   id: string;
   menu_id: string;
   name: string;
-  dishes: Dishes;
+  dishes: DishesType;
 };
 
-export type Meals = Meal[];
+export type MealsType = MealType[];

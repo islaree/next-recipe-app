@@ -3,12 +3,12 @@
 import { Button } from "./ui/button";
 import { Trash2 } from "lucide-react";
 import { useMealStore } from "@/store/store";
-import { Meal } from "@/types/meal";
+import { MealType } from "@/types/meal";
 import Dishes from "./dishes";
 import AddDish from "./add-dish";
 
 interface MealProps {
-  data: Meal;
+  data: MealType;
 }
 
 export default function Meal({ data }: MealProps) {

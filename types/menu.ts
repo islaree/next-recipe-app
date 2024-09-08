@@ -1,10 +1,10 @@
-import { Meals } from "./meal";
+import { MealsType } from "./meal";
 
-export type Menu = {
+export type MenuType = {
   user_id?: string;
   id: string;
   date?: string;
-  meals: Meals;
+  meals: MealsType;
 };
 
-export type Menus = Menu[];
+export type MenusType = MenuType[];

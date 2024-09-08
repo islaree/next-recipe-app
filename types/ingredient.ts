@@ -1,8 +1,8 @@
-export type Ingredient = {
+export type IngredientType = {
   id: string;
   dish_id: string;
   name: string;
   num: number;
 };
 
-export type Ingredients = Ingredient[];
+export type IngredientsType = IngredientType[];

@@ -1,12 +1,12 @@
 "use client";
 
-import { Dish } from "@/types/dish";
+import { DishType } from "@/types/dish";
 import { Button } from "./ui/button";
 import { Trash2 } from "lucide-react";
 import { useDishStore } from "@/store/store";
 
 interface DishProps {
-  data: Dish;
+  data: DishType;
 }
 
 export default function Dish({ data }: DishProps) {
