@@ -6,7 +6,6 @@ export type DishType = {
   menu_id: string;
   meal_type: string;
   name: string;
-  ingredients: IngredientsType;
 };
 
 export type DishesType = DishType[];
