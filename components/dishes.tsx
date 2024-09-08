@@ -9,10 +9,10 @@ export default function Dishes({ title }: { title: string }) {
   const dishes = useDishStore((state) => state.get(params.id as string, title));
 
   return (
-    <>
+    <div>
       {dishes?.map((dish) => (
         <Dish key={dish.id} data={dish} />
       ))}
-    </>
+    </div>
   );
 }

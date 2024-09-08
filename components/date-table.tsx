@@ -18,7 +18,7 @@ export default function DateTable({ dates }: { dates: any }) {
   const router = useRouter();
 
   const handleRowClick = (date: Date) => {
-    router.push(`/${format(date, "yyyy-MM-dd")}`);
+    router.push(`/calendar/${format(date, "yyyy-MM-dd")}`);
   };
 
   return (
