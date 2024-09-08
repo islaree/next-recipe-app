@@ -10,11 +10,10 @@ meal
 
 - id
 - name
-- foods
+- dishes
 
-food
+dish
 
 - id
 - name
 - ingredients
-- note
