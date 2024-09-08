@@ -14,7 +14,6 @@ export const useDishStore = create<DishState>((set, get) => ({
   dishes: [],
   add: (dish) => set((state) => ({ dishes: [...state.dishes, dish] })),
   get: (id, title) => {
-    console.log(id, title);
     const state = get();
     return state.dishes.filter((d) => d.menu_id == id && d.meal_type == title);
   },
