@@ -23,7 +23,7 @@ export default function Home() {
   const dates = generateDates(year, month);
 
   return (
-    <div>
+    <div className="max-w-2xl mx-auto px-5 pt-10 py-24">
       <DateTable dates={dates} />
     </div>
   );

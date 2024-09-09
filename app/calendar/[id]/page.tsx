@@ -10,7 +10,7 @@ export default function MenuPage() {
   const { id } = useParams();
   const date = new Date(id as string);
   return (
-    <>
+    <div className="max-w-2xl mx-auto px-5 pt-10 py-24">
       <Link href="/calendar">← back</Link>
       <div className="text-center py-6">
         <h1 className="font-bold">
@@ -20,6 +20,6 @@ export default function MenuPage() {
       <Meal title="breakfast" />
       <Meal title="lunch" />
       <Meal title="dinner" />
-    </>
+    </div>
   );
 }
