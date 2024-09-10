@@ -5,6 +5,7 @@ import Meal from "@/components/meal";
 import { useParams } from "next/navigation";
 import { format } from "date-fns";
 import { ja } from "date-fns/locale/ja";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function MenuPage() {
   const { id } = useParams();
@@ -17,9 +18,22 @@ export default function MenuPage() {
           {format(date, "MM/dd (EEE)", { locale: ja })}の献立
         </h1>
       </div>
-      <Meal title="breakfast" />
-      <Meal title="lunch" />
-      <Meal title="dinner" />
+      <Tabs defaultValue="breakfast" className="w-[400px]">
+        <TabsList>
+          <TabsTrigger value="breakfast">朝食</TabsTrigger>
+          <TabsTrigger value="lunch">昼食</TabsTrigger>
+          <TabsTrigger value="dinner">夕食</TabsTrigger>
+        </TabsList>
+        <TabsContent value="breakfast">
+          <Meal title="breakfast" />
+        </TabsContent>
+        <TabsContent value="lunch">
+          <Meal title="lunch" />
+        </TabsContent>
+        <TabsContent value="dinner">
+          <Meal title="dinner" />
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }
