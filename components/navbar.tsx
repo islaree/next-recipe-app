@@ -14,7 +14,7 @@ export default function Navbar() {
       <NavItem href="/recipe">
         <CookingPot className="h-5 w-5" />
       </NavItem>
-      <NavItem href="/shopping">
+      <NavItem href="/cart">
         <ShoppingCart className="h-5 w-5" />
       </NavItem>
     </nav>
