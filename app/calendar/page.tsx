@@ -1,6 +1,7 @@
 "use client";
 
 import DateTable from "@/components/date-table";
+import { Calendar, CalendarDays, CookingPotIcon } from "lucide-react";
 import { useState } from "react";
 
 // 指定した年と月の日付リストを生成する関数
@@ -24,6 +25,12 @@ export default function Home() {
 
   return (
     <div className="max-w-2xl mx-auto px-5 pt-10 py-24">
+      <div className="flex space-x-2 items-center">
+        <div className="flex items-center justify-center rounded-md bg-sky-50 p-2 border border-sky-100">
+          <CalendarDays className="w-4 h-4 text-sky-600" />
+        </div>
+        <h1 className="text-xl font-bold font-serif">Menu</h1>
+      </div>
       <DateTable dates={dates} />
     </div>
   );

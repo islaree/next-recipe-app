@@ -17,8 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
+      <body className={`${inter.className} bg-muted/40`}>
+        <div className="sticky top-0 left-0 z-50">
+          <Navbar />
+        </div>
         {children}
       </body>
     </html>
