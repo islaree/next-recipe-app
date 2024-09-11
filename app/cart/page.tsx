@@ -19,8 +19,8 @@ export default function ShoppingPage() {
   return (
     <div className="px-5 pt-10 pb-24">
       <div className="flex space-x-2 items-center">
-        <div className="flex items-center justify-center rounded-md bg-gray-100 p-2 border border-gray-200">
-          <ShoppingCart className="w-4 h-4 text-gray-600" />
+        <div className="flex items-center justify-center rounded-md bg-yellow-50 p-2 border border-yellow-200">
+          <ShoppingCart className="w-4 h-4 text-yellow-600" />
         </div>
         <h1 className="text-xl font-bold font-serif">Shopping Cart</h1>
       </div>

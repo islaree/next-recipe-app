@@ -1,50 +1,80 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { CalendarDays, CookingPot, ShoppingCart } from "lucide-react";
+import {
+  CalendarDays,
+  CookingPot,
+  PanelLeft,
+  ShoppingCart,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Button } from "./ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   return (
-    <nav className="fixed flex items-center justify-center gap-x-8 bottom-0 left-0 w-full bg-black z-10 h-14 text-white">
-      <NavItem href="/calendar">
-        <CalendarDays className="w-5 h-5" />
-      </NavItem>
-      <NavItem href="/recipe">
-        <CookingPot className="h-5 w-5" />
-      </NavItem>
-      <NavItem href="/cart">
-        <ShoppingCart className="h-5 w-5" />
-      </NavItem>
-    </nav>
-  );
-}
-
-function NavItem({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactElement;
-}) {
-  const pathname = usePathname();
-
-  return (
-    <Link
-      href={href}
-      className={cn(
-        "relative text-gray-400",
-        pathname === href && "text-white"
-      )}
-    >
-      <span
-        className={cn(
-          "hidden w-1 h-1 bg-sky-400 rounded-full absolute -bottom-2.5 left-1/2 -translate-x-1/2",
-          pathname === href && "block"
-        )}
-      ></span>
-      {children}
-    </Link>
+    <div className="flex items-center justify-between w-full h-14 px-4 bg-white border-b border-gray-200">
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button size="icon" variant="outline">
+            <PanelLeft className="w-5 h-5" />
+          </Button>
+        </SheetTrigger>
+        <SheetContent
+          side="left"
+          className="flex flex-col gap-4 text-lg font-medium"
+        >
+          <SheetHeader>
+            <SheetTitle></SheetTitle>
+            <SheetDescription></SheetDescription>
+          </SheetHeader>
+          <SheetClose asChild>
+            <Link
+              href="/calendar"
+              className="flex items-center gap-4 px-2.5 text-foreground"
+            >
+              <CalendarDays className="w-5 h-5" />
+              Menu
+            </Link>
+          </SheetClose>
+          <SheetClose asChild>
+            <Link
+              href="/recipe"
+              className="flex items-center gap-4 px-2.5 text-foreground"
+            >
+              <CookingPot className="w-5 h-5" />
+              Recipe
+            </Link>
+          </SheetClose>
+          <SheetClose asChild>
+            <Link
+              href="/cart"
+              className="flex items-center gap-4 px-2.5 text-foreground"
+            >
+              <ShoppingCart className="w-5 h-5" />
+              Shopping Cart
+            </Link>
+          </SheetClose>
+        </SheetContent>
+      </Sheet>
+      <div>
+        <Avatar>
+          <AvatarImage src="https://github.com/shadcn.png" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+      </div>
+    </div>
   );
 }
