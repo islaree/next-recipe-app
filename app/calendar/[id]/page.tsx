@@ -11,14 +11,14 @@ export default function MenuPage() {
   const { id } = useParams();
   const date = new Date(id as string);
   return (
-    <div className="max-w-2xl mx-auto px-5 pt-10 py-24">
+    <div className="max-w-2xl mx-auto px-5 pt-10 py-24 bg-gray-50">
       <Link href="/calendar">← back</Link>
-      <div className="text-center py-6">
-        <h1 className="font-bold">
+      <div className="py-4">
+        <h1 className="text-xl font-bold">
           {format(date, "MM/dd (EEE)", { locale: ja })}の献立
         </h1>
       </div>
-      <Tabs defaultValue="breakfast" className="w-[400px]">
+      <Tabs defaultValue="breakfast">
         <TabsList>
           <TabsTrigger value="breakfast">朝食</TabsTrigger>
           <TabsTrigger value="lunch">昼食</TabsTrigger>

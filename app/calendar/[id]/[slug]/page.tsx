@@ -37,6 +37,7 @@ import {
 
 import { Ellipsis, Trash2 } from "lucide-react";
 import { IngredientType } from "@/types/ingredient";
+import { useCartStore } from "@/store/shopping";
 /**
  * id: uuidv4()
  * dish_id: string
@@ -95,10 +96,15 @@ function IngredientItem({ data }: { data: IngredientType }) {
 
   const update = useIngredientStore((state) => state.update);
   const remove = useIngredientStore((state) => state.delete);
+  const addCart = useCartStore((state) => state.add);
 
   const handleUpdate = () => {
     setEditing(false);
     update({ ...data, name: name, num: num });
+  };
+
+  const handleAddCart = () => {
+    addCart({ ...data, id: uuidv4(), checked: false });
   };
 
   const handleDelete = () => {
@@ -161,6 +167,9 @@ function IngredientItem({ data }: { data: IngredientType }) {
               <Ellipsis className="w-5 h-5 text-gray-600" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
+              <DropdownMenuItem onClick={handleAddCart}>
+                カートに追加する
+              </DropdownMenuItem>
               <DropdownMenuItem onClick={() => setEditing(true)}>
                 編集する
               </DropdownMenuItem>
