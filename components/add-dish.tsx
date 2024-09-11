@@ -41,7 +41,7 @@ export default function AddDish({ mealname }: { mealname: string }) {
   };
 
   return (
-    <div className="py-2">
+    <div className="p-4">
       <Dialog>
         <DialogTrigger className="text-sm">+ 料理を追加する</DialogTrigger>
         <DialogContent>
