@@ -1,3 +1,9 @@
+
+## stack
+
+- next.js
+- 
+
 ## data schema
 
 menu
