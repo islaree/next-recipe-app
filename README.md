@@ -2,7 +2,7 @@
 ## stack
 
 - next.js
-- 
+- next auth
 
 ## data schema
 
