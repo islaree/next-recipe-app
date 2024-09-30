@@ -3,6 +3,7 @@
 
 - next.js
 - next auth
+- supabase
 
 ## data schema
 
